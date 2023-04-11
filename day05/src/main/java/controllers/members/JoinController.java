@@ -11,16 +11,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class JoinController {
 	@GetMapping	//RequestMapping의 /member/join 가 앞에 추가된다.
 	public String join(Model model){
-		model.addAttribute("title", "회원가입");
-		model.addAttribute("content", "회원가입 내용");
-
+		Join join = new Join();
+		model.addAttribute("join", join);
 		return "member/join";
 	}
 
 	@PostMapping// /member/join
-	public String joinPs(Join join){
+	public String joinPs(Join join, Model model){
 		//model.addAttribute("join", join);
 		System.out.println(join);
-		return "redirect:/member/login";
+		return "member/join";
+		//return "redirect:/member/login";
 	}
 }

@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<body>
-<dl>
-	<dt>아이디</dt>
-	<dd th:text="${member.userId}"></dd>
-</dl>
-<dl>
-	<dt>회원명</dt>
-	<dd th:text="${member.userNm}"></dd>
-</dl>
-<dl>
-	<dt>휴대전화</dt>
-	<dd th:text="${member.mobile}"></dd>
-</dl>
-<dl>
-	<dt>가입일시</dt>
-	<dd th:text="${member.regDt}"></dd>
-</dl>
-</body>
+	<body>
+		<header th:replace="~{outlines/header::common}"></header>
+		<th:block th:object="${member}">
+			[[*{@cLib.toConvert(userId)}]]<br>
+			[[${@cLib.toConvert(member.userId)}]]
+			<dl>
+				<dt th:text="#{userId}"></dt>
+				<dd th:text="*{userId}"></dd>
+			</dl>
+			<dl>
+				<dt th:text="#{userNm}"></dt>
+				<dd th:text="*{userNm}"></dd>
+			</dl>
+			<dl>
+				<dt th:text="#{mobile}"></dt>
+				<dd th:text="*{mobile}"></dd>
+			</dl>
+			<dl>
+				<dt th:text="#{member.intro}"></dt>
+				<dd th:utext="*{intro}"></dd>
+			</dl>
+			<dl>
+				<dt th:text="#{member.regDt}"></dt>
+				<dd th:text="*{#temporals.format(regDt, 'yyyy-MM-dd HH:mm:ss')}"></dd>
+			</dl>
+		</th:block>
+		<footer th:replace="~{outlines/footer::common}"></footer>
+	</body>
 </html>
