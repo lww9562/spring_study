@@ -37,6 +37,8 @@
       <version>1.18.26</version>
       <scope>provided</scope>
     </dependency>
+
+    <!--타임리프 사용을 위한 dependencies-->
     <dependency>
       <groupId>org.thymeleaf</groupId>
       <artifactId>thymeleaf-spring5</artifactId>
@@ -51,6 +53,57 @@
       <groupId>nz.net.ultraq.thymeleaf</groupId>
       <artifactId>thymeleaf-layout-dialect</artifactId>
       <version>3.2.1</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.validation</groupId>
+      <artifactId>validation-api</artifactId>
+      <version>2.0.1.Final</version>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate.validator</groupId>
+      <artifactId>hibernate-validator</artifactId>
+      <version>6.0.23.Final</version>
+    </dependency>
+
+    <!--DB 연동을 위한 dependencies-->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+      <version>5.3.26</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.tomcat</groupId>
+      <artifactId>tomcat-jdbc</artifactId>
+      <version>9.0.73</version>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.database.jdbc</groupId>
+      <artifactId>ojdbc8</artifactId>
+      <version>23.2.0.0</version>
+    </dependency>
+
+    <!--로거를 사용하기 위한 dependencies-->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>2.0.7</version>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>1.4.6</version>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.ojdbc</groupId>
+      <artifactId>orai18n</artifactId>
+      <version>19.3.0.0</version>
+    </dependency>
+
+    <!--비밀번호를 해시(bcrypt)로 관리하기 위한 dependency-->
+    <dependency>
+      <groupId>org.mindrot</groupId>
+      <artifactId>jbcrypt</artifactId>
+      <version>0.4</version>
     </dependency>
   </dependencies>
 </project>
