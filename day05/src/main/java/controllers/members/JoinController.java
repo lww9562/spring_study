@@ -27,6 +27,7 @@ public class JoinController {
 
 	@PostMapping// /member/join
 	public String joinPs(@Valid Join join, Errors errors, Model model){
+		System.out.println(join);
 		validator.validate(join, errors);
 
 		if(errors.hasErrors()){
